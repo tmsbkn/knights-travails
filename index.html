@@ -10,6 +10,7 @@
 		}
 		body {
 			padding: 1rem;
+			background-color: #ffffdd;
 			font-family:
 				system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
 				Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -27,25 +28,48 @@
 			border-radius: 4px;
 		}
 		form {
-			padding: 1rem;
-			background-color: #ddd;
-			display: inline-grid;
-			gap: 0.5rem;
+			margin: auto;
+			display: grid;
+			width: fit-content;
+			gap: 1rem;
 			grid-template-columns: 1fr 1fr;
 		}
 		.inputGroup {
+			background-color: #ddffdd;
+			color: #009900;
+			padding: 0.5rem;
+			border-radius: 0.5rem;
 			display: flex;
 			flex-direction: column;
-			border: 1px gray solid;
+			gap: 6px;
 		}
 		.inputTitle {
 			font-weight: 600;
-			padding-bottom: 0.5rem;
+			color: #006600;
+		}
+		input[type="number"] {
+			color: inherit;
+			background-color: inherit;
+			border: transparent;
+			border-bottom: #009900 1px solid;
+			outline: transparent;
+			font-size: inherit;
+			padding: 0;
 		}
 		input[type="submit"] {
 			grid-column: span 2;
 			justify-self: center;
 			width: min-content;
+			border: transparent;
+			outline: none;
+			padding: 0.5em 1em;
+			border-radius: 0.5rem;
+			color: #dd00dd;
+			background-color: #ffddff;
+			&:hover {
+				outline: #dd00dd 1px solid;
+				box-shadow: 0 0 5px #dd00dd;
+			}
 		}
 		.moveList {
 			display: flex;
@@ -65,37 +89,36 @@
 	<body>
 		<main>
 			<h1>Knight Moves!</h1>
-			<h3>Open console to play. <kbd>F11</kbd></h3>
 			<form id="form">
 				<div class="inputGroup" id="fromInputs">
 					<span class="inputTitle">Starting Coordinates</span>
 					<div class="inputField">
-						<label for="fromX">'X':</label>
+						<label for="fromX">'X' (0-7):</label>
 						<input required type="number" min="0" max="7" value="6" id="fromX">
 					</div>
 					<div class="inputField">
-						<label for="fromY">'Y':</label>
+						<label for="fromY">'Y' (0-7):</label>
 						<input required type="number" min="0" max="7" value="7" id="fromY">
 					</div>
 				</div>
 				<div class="inputGroup" id="toInputs">
 					<span class="inputTitle">Target Coordinates</span>
 					<div class="inputField">
-						<label for="toX">'X': </label>
+						<label for="toX">'X' (0-7): </label>
 						<input required type="number" min="0" max="7" value="2" id="toX">
 					</div>
 					<div class="inputField">
-						<label for="toY">'Y': </label>
+						<label for="toY">'Y' (0-7): </label>
 						<input required type="number" min="0" max="7" value="1" id="toY">
 					</div>
 				</div>
 				<input type="submit" value="Move!" id="submitButton">
 			</form>
 			<p>
-				Use <code>knightMoves(start, end)</code> to play where start and end are
-				both in the form of [x,y] pairs
+				Use the form above to choose a starting point and a target for two
+				spaces on a chess board. Then hit the <em>Move</em> button to see how
+				many moves it takes a knight to get from one spot to the other!
 			</p>
-			<p>Example: <code>knightMoves([2, 4], [0, 0])</code></p>
 			<div id="result"></div>
 		</main>
 		<script type="module" src="./src/index.js"></script>

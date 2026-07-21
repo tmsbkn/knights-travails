@@ -1,6 +1,5 @@
 import { knightMoves } from "./knightMoves.js";
 
-knightMoves([2, 4], [0, 0]);
 const form = document.getElementById("form");
 
 const getData = () => {
