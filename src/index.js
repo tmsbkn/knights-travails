@@ -33,9 +33,9 @@ const knightMoves = (start, target) => {
 
 	//  if that square equals target, return the path
 
-	//  otherwise, get all valid knight moves from that square
-
-	//  for each move not already visited:
-	//  mark it visited
-	//  push a new path (old path + this move) onto the queue
+const printResult = (path) => {
+	console.log(`You made it in ${path.length} moves! Here is your path`);
+	path.forEach((square) => {
+		console.log(square);
+	});
 };
