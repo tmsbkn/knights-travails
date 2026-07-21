@@ -47,6 +47,19 @@
 			justify-self: center;
 			width: min-content;
 		}
+		.moveList {
+			display: flex;
+			gap: ;
+			& > .moveStep::after {
+				content: " > ";
+			}
+			& > .moveStep:last-child {
+				color: limegreen;
+				&::after {
+					content: "";
+				}
+			}
+		}
 		</style>
 	</head>
 	<body>
@@ -83,7 +96,8 @@
 				both in the form of [x,y] pairs
 			</p>
 			<p>Example: <code>knightMoves([2, 4], [0, 0])</code></p>
+			<div id="result"></div>
 		</main>
-		<script src="./src/index.js"></script>
+		<script type="module" src="./src/index.js"></script>
 	</body>
 </html>
