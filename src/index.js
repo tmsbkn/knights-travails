@@ -59,3 +59,5 @@ const printResult = (path) => {
 		console.log(square);
 	});
 };
+
+knightMoves([2, 4], [0, 0]);
