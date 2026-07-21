@@ -28,10 +28,30 @@ const knightMoves = (start, target) => {
 	const visited = new Set([start.toString()]);
 
 	//	while queue is not empty:
-	//  dequeue the first path
-	//	get the last square in that path
+	while (queue.length > 0) {
+		//  dequeue the first path
+		const path = queue.shift();
+		//	get the last square in that path
+		const current = path[path.length - 1];
+		//  if the current square equals target, return the path
+		if (current[0] === target[0] && current[1] === target[1]) {
+			printResult(path);
+			return path;
+		}
 
-	//  if that square equals target, return the path
+		//  otherwise, get all valid knight moves from that square
+		for (const move of validMoves(current)) {
+			const key = move.toString();
+			//  for each move not already visited:
+			if (!visited.has(key)) {
+				//  mark it visited
+				visited.add(key);
+				//  push a new path (old path + this move) onto the queue
+				queue.push([...path, move]);
+			}
+		}
+	}
+};
 
 const printResult = (path) => {
 	console.log(`You made it in ${path.length} moves! Here is your path`);
