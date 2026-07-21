@@ -1,0 +1,29 @@
+{
+  "name": "knights-travails",
+  "version": "1.0.0",
+  "description": "Find the shortest moves from two points as the knight moves on a chess board",
+  "keywords": [
+    "BFS"
+  ],
+  "homepage": "https://github.com/tmsbkn/knights-travails#readme",
+  "bugs": {
+    "url": "https://github.com/tmsbkn/knights-travails/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tmsbkn/knights-travails.git"
+  },
+  "license": "MIT",
+  "author": "TMSBKN",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "biome check src",
+    "format": "biome check --write src"
+
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.4"
+  }
+}
