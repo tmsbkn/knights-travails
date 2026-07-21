@@ -51,6 +51,7 @@ form {
 }
 input[type="number"] {
   color: inherit;
+  width: 3ch;
   background-color: inherit;
   border: transparent;
   border-bottom: #009900 1px solid;
